@@ -1,7 +1,0 @@
-{
-  "packages": {
-    "tricomb2b/drupal-project": {
-      "8.x-dev": { @composer.json }
-    }
-  }
-}
