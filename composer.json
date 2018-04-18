@@ -39,7 +39,8 @@
     },
     "autoload": {
         "classmap": [
-            "scripts/composer/ScriptHandler.php"
+            "scripts/composer/ScriptHandler.php",
+            "scripts/tricom/TricomHandler.php"
         ],
         "files": ["load.environment.php"]
     },
@@ -52,10 +53,14 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "@clean-files"
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "clean-files": [
+            "DrupalProject\\tricom\\TricomHandler::removeSomeFiles"
         ]
     },
     "extra": {

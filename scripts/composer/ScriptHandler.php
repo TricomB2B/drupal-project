@@ -58,14 +58,6 @@ class ScriptHandler {
       umask($oldmask);
       $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
-
-    // Remove the Drupal core install.php script for security reasons
-    if ($fs->exists($drupalRoot . '/core/install.php'))
-      $fs->remove($drupalRoot . '/core/install.php');
-
-    // Remove the development server script, since we don't need or use it
-    if ($fs->exists($drupalRoot . '/.ht.router.php'))
-      $fs->remove($drupalRoot . './.ht.router.php');
   }
 
   /**
