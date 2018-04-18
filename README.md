@@ -1,5 +1,16 @@
 # Composer template for Drupal projects
 
+## TriComB2B's Custom Workflow
+
+We have added some additional handling here for our custom workflow.
+
+- Clone this repo!
+- In your project root, run `composer install`.
+- Initially, with no lockfile in place, the `core/install.php` script will remain in place. You must run the Drupal installation process before taking any other action.
+- Once Drupal is installed, and the composer lockfile is committed to the repo, anyone who now runs `composer install` will automatically have the `core/install.php` script removed, as it is no longer required and has potential security implications.
+
+## Drupal Project Original README
+
 [![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
 
 This project template provides a starter kit for managing your site
