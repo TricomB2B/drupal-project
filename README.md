@@ -4,10 +4,42 @@
 
 We have added some additional handling here for our custom workflow.
 
+#### Creating a New Site
+
 - Clone this repo!
 - In your project root, run `composer install`.
-- Initially, with no lockfile in place, the `core/install.php` script will remain in place. You must run the Drupal installation process before taking any other action.
-- Once Drupal is installed, and the composer lockfile is committed to the repo, anyone who now runs `composer install` will automatically have the `core/install.php` script removed, as it is no longer required and has potential security implications.
+- You must set up your server to consider the `web/` directory as the webroot.
+- Initially, the `web/core/install.php` script will remain in place. You must run the Drupal installation process before taking any other action.
+- Copy the `.env.example` to `.env`, editing `.env` with your correct local settings.
+  - `HASH_SALT` and `SYNC_DIR` should be pulled from the newly generated `web/sites/default/settings.php` file and entered here.
+  - `HASH_SALT` and `SYNC_DIR` values should also be added to the `.env.example` file so they can be used by everyone working on the project.
+- Copy the `example.settings.php` file to `web/core/sites/default/settings.php`.
+	- Ensure the permissions on `web/core/sites/default/settings.php` are `read` for everybody. There are a number of ways to go about this, but the easiest may be via the command line with the chmod command.
+	- `chmod 444 web/sites/default/settings.php`
+- At this point the site should be working as expected.
+- You can now initialize the local git repository, commit all the files, and push them to a remote repository so the rest of the team can begin working.
+
+#### Cloning an Existing Site
+
+- Clone the relevant repo.
+- In the project root, run `composer install`.
+- Since there is now a composer lockfile in place, the `web/core/install.php` script will be automatically removed.
+- You must set up your server to consider the `web/` directory as the webroot.
+- Copy the `.env.example` file to `.env`, editing `.env` with your local settings.
+  - Ensure the `HASH_SALT` and `SYNC_DIR` variables are uncommented.
+- Import the database to the correct location, based on your `.env` settings.
+- The site should now be working as expected.
+
+#### Development
+
+Gulp and its related packages are installed in the root of the project. Simply run yarn to install:
+
+```sh
+$ cd drupal-project-root
+$ yarn
+```
+
+From the root you can now run gulp and it will build the dist files located in the theme defined in the `.env` file. In order for Browser Sync to get building, you can add your proxy URL to the `.env` file, or run `gulp local` to run a local Browser Sync server.
 
 ## Drupal Project Original README
 
