@@ -1,0 +1,10 @@
+name: Tab to Accordion
+type: module
+description: 'Builds custom block content type and view block display for hero banners. Template and styling found in D8 theme'
+dependencies: 
+  - block
+  - image
+  - text
+  - node
+package: Custom
+core: '8.x'

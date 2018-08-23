@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tab_accordion
+    - field.storage.block_content.field_tab_accordion_display_page
+    - node.type.page
+id: block_content.tab_accordion.field_tab_accordion_display_page
+field_name: field_tab_accordion_display_page
+entity_type: block_content
+bundle: tab_accordion
+label: 'Display Page'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

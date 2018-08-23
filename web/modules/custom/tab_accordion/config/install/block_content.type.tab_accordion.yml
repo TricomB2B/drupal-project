@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: tab_accordion
+label: 'Tab to Accordion'
+revision: 1
+description: 'Custom block type for creating tab to accordion content. Includes option for image'

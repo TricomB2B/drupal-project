@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tab_accordion
+    - field.storage.block_content.field_tab_accordion_published
+id: block_content.tab_accordion.field_tab_accordion_published
+field_name: field_tab_accordion_published
+entity_type: block_content
+bundle: tab_accordion
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

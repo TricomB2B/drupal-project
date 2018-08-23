@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tab_accordion
+    - field.storage.block_content.field_tab_accordion_sort
+id: block_content.tab_accordion.field_tab_accordion_sort
+field_name: field_tab_accordion_sort
+entity_type: block_content
+bundle: tab_accordion
+label: 'Tab Accordion Sort'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
