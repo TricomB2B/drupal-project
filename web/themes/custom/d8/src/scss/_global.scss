@@ -1,0 +1,30 @@
+// prevent horizontal scrolling
+html, body {
+  overflow-x: hidden;
+}
+
+// for sticky footer
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .content {
+    flex-grow: 1;
+  }
+}
+
+// corrects an issue with SVGs in Edge
+svg {
+  pointer-events: none;
+}
+
+// remove focus browser styling
+*:focus {
+    outline: none;
+}

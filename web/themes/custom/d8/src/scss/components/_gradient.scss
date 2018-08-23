@@ -1,0 +1,19 @@
+.gradient {
+	&-linear {
+		&-b-w {
+			background: linear-gradient(color("white"), color("black"));
+		}
+
+		&-transparent {
+			&-b-w {
+				background: linear-gradient(rgba(255,255,255,0.35), rgba(0,0,0,0.65));			
+			}
+		}
+	}
+
+	&-radial {
+		&-w-g-b {
+			background: radial-gradient(color("white"), color("gray"), color("black"));
+		}
+	}
+}

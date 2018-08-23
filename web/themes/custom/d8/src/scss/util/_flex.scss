@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/// Generates the flexbox container properties based on the given
+/// properties argument.
+///
+/// @argument {string} $properties
+///   A space-delimted list of all the properties to apply to the
+///   flex container.
+///   Currently possible values:
+///   - column
+///   - wrap
+///   - wrap-reverse
+///   - justify-end : justify-content: flex-end
+///   - justify-center : justify-content: center
+///   - justify-between : justify-content: space-between
+///   - justify-around : justify-content: space-around
+///   - align-start : align-items: flex-start
+///   - align-center : align-items: center
+///   - align-end : align-items: flex-end
+///   - align-baseline : align-items: baseline
+///
+///   All other values are ignored, as they would either not
+///   be relevant to flexbox or they would cover the default
+///   values of the properties.
+///
+/// @example scss
+///   .element {
+///     @include flex();
+///   }
+///
+///   // CSS Output
+///   .element {
+///     display: flex;
+///   }
+///
+/// @example scss
+///   .element {
+///     @include flex(column justify-start);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     display: flex;
+///     flex-direction: column;
+///   }
+///
+/// @example scss
+///   .element {
+///     @include flex(wrap align-center justify-center);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     display: flex;
+///     flex-wrap: wrap;
+///     align-items: center;
+///     justify-content: center;
+///   }
+
+@mixin flex ($properties: "") {
+  $props: inspect($properties);
+
+  display: flex;
+
+  @if str-index($props, "column") {
+    flex-direction: column;
+  }
+
+  @if str-index($props, "wrap") {
+    flex-wrap: wrap;
+  }
+  @if str-index($props, "wrap-reverse") {
+    flex-wrap: wrap-reverse;
+  }
+
+  @if str-index($props, "justify-end") {
+    justify-content: flex-end;
+  }
+  @if str-index($props, "justify-center") {
+    justify-content: center;
+  }
+  @if str-index($props, "justify-between") {
+    justify-content: space-between;
+  }
+  @if str-index($props, "justify-around") {
+    justify-content: space-around;
+  }
+
+  @if str-index($props, "align-start") {
+    align-items: flex-start;
+  }
+  @if str-index($props, "align-center") {
+    align-items: center;
+  }
+  @if str-index($props, "align-end") {
+    align-items: flex-end;
+  }
+  @if str-index($props, "align-baseline") {
+    align-items: baseline;
+  }
+}

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+/// Provides a single source of truth for styling container elements,
+/// as well as providing standard defaults.
+///
+/// @argument {number (with unit)} $max-container-width [1400px]
+///   Max-width to set on the element
+///
+/// @argument {list} $margin [0 auto]
+///   List of margin values, accepts CSS shorthand
+///
+/// @argument {list} $padding [0 15px]
+///   List of padding values, accepts CSS shorthand
+///
+///
+/// @example scss
+///   .content-container {
+///     @include content-container();
+///   }
+///
+///   // CSS Output
+///   .content-container {
+///     max-width: 1400px;
+///     margin: 0 auto;
+///			padding: 0 1em;
+///   }
+///
+/// @example scss
+///   .content-container {
+///     @include content-container($margin: 0 50px 2em);
+///   }
+///
+///   // CSS Output
+///   .content-container {
+///     max-width: 1400px;
+///     margin: 0 50px 2em;
+///			padding: 0 1em;
+///   }
+
+@mixin content-container($max-container-width: 1400px, $margin: 0 auto, $padding: 0 1em) {
+  max-width: $max-container-width;
+  margin: $margin;
+  padding: $padding;
+}

@@ -1,0 +1,11 @@
+name: Hero Banner
+type: module
+description: 'Builds custom block content type and view display for hero banners'
+dependencies: 
+  - block
+  - options
+  - image
+  - text
+  - node
+package: Custom
+core: '8.x'

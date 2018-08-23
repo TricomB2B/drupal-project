@@ -1,0 +1,83 @@
+.group-flex {
+  @include flex(wrap);
+
+  @include media(">=small") {
+    .flex-padding {
+      padding: 0 1.125rem;
+    }
+  }
+
+  .col {
+    // include -all for responsive sizing on all col #
+    &-all {
+      flex-basis: 100%;
+
+      @include media(">=small") {
+        flex-basis: 50%;
+      }
+    }
+
+    @include media(">=medium") {
+      &-20, &-33 {      
+        flex-basis: 33.3%;
+      }
+
+      &-25 { 
+        flex-basis: 25%;
+      }
+
+      &-75 {
+        flex-basis: 75%;
+      }
+    }
+
+    @include media(">=large") {
+      &-20 {
+        flex-basis: 20%;
+      }
+
+      &-66 {
+        flex-basis: 66.7%;
+      }
+    }    
+  }
+}
+
+// for IE11 flex-basis bug
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .group-flex {
+    .flex-padding {
+      &.col {
+        @include media(">=small") {
+          &-all {
+            flex-basis: calc(50% - 2.25rem);
+          }
+        }
+
+        @include media(">=medium") {
+          &-20, &-33 {
+            flex-basis: calc(33.3% - 2.25rem);
+          }
+
+          &-25 {
+            flex-basis: calc(25% - 2.25rem);
+          }
+        }
+
+        @include media(">=large") {
+          &-20 {
+            flex-basis: calc(20% - 2.25rem);
+          }
+
+          &-66 {
+            flex-basis: calc(66.7% - 2.25rem);
+          }
+
+          &-75 {
+            flex-basis: calc(75% - 2.25rem);
+          }
+        }
+      }
+    }
+  }
+}

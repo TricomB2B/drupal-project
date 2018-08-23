@@ -1,0 +1,25 @@
+.img-overlay {
+  &-1 {
+    @include position(absolute, 0);
+    background-color: rgba(color("gray"), 0.5);
+  }
+
+  &-2 {
+    @include position(absolute, 0);
+    @extend .gradient-linear-transparent-b-w;
+  }
+
+  &-3 {
+    @include position(absolute, 0);
+    background-color: rgba(color("white"), 0.75);
+  }
+
+  &-bw {
+    .hero-banner-image-wrapper img,
+    img {
+      filter: grayscale(100%);      
+      filter: gray;
+      filter: url(filters.svg#grayscale);
+    }
+  }
+}

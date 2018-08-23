@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_banner
+label: 'Hero Banner'
+revision: 1
+description: 'Custom block type for creating hero banner. Includes option for image, with content and color overlays'

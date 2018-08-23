@@ -1,0 +1,15 @@
+.center {
+	position: relative;
+	
+	.vertical {
+		@include center(vertical);
+	}
+
+	.horizontal {
+		@include center(horizontal);
+	}
+
+	.both {
+		@include center(both);
+	}
+}

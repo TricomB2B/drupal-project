@@ -1,0 +1,44 @@
+#block-views-block-hero-banner-hero-banner {
+  position: relative;
+  min-height: $header-height;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.hero-banner {
+  &-view {
+    height: $banner-height;
+  }
+
+  &-image-wrapper {
+  @include position(absolute, 0);
+  z-index: -1;
+  }
+
+  img {
+    @include size(100%);
+    object-fit: cover;
+    // for ie11 object-fit polyfill
+    font-family: "object-fit: cover;";
+  }
+
+  &-content {
+    &-wrapper {
+      @include flex(justify-center align-center);
+      @include position(absolute, 0);
+      color: color("white");
+    }
+
+    &-text {
+      padding: 0;
+
+      @include media(">=large") {
+        padding: 0 2em;
+      }
+
+      > * {
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}

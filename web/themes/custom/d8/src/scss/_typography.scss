@@ -1,0 +1,167 @@
+/* =Typography
+----------------------------------------------- */
+// typography
+
+// links
+a {
+  color: color("black");
+  @extend .w-bold;
+  text-decoration: none;  
+}
+
+// color definitions
+.typography.light {
+  color: color("black");
+
+  a {    
+    color: color("black");
+  }
+
+  a:hover {
+    color: color("gray");
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li, small, label {
+    color: color("gray");
+  }
+
+  button {
+    color: color("white");
+  }
+}
+
+.typography.dark {
+  a {
+    color: color("white");
+  }
+
+  a:hover {
+    color: color("gray");
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li, small, label, button {
+    color: color("white");
+  }
+}
+
+// font styling and sizing
+h1, h2, h3, h4, h5, h6, p, li, small, label, button, div, legend, svg text {
+  font-family: $font-stack-verdana;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p, .p, li {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+small, .small {
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+label, .label {
+  font-size: 1.125em;
+}
+
+h1, .h1 {
+  font-size: 2.5em;
+  @extend .w-xbold;
+  @extend .uppercase;
+
+  @include media(">=large") {
+    font-size: 2.75em;
+  }
+}
+
+h2, .h2 {
+  font-size: 2.25em;
+
+  @include media(">=large") {
+    font-size: 2em;
+  }
+}
+
+h3, .h3 {
+  font-size: 2em;
+
+  @include media(">=large") {
+    font-size: 1.75em;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.75em;
+
+  @include media(">=large") {
+    font-size: 1.5em;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.5em;
+
+  @include media(">=large") {
+    font-size: 1.25em;
+  }
+}
+
+h6, .h6 {
+  font-size: 1.25em;
+}
+
+.no-margin {
+  line-height: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.no-line-height {
+  line-height: 0;
+}
+
+// positional helper classes
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+.text-middle {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// text styling helper classes
+.w-xlight    { font-weight: 200; }
+.w-light     { font-weight: 300; }
+.w-regular   { font-weight: 400; }
+.w-semibold  { font-weight: 600; }
+.w-bold      { font-weight: 700; }
+.w-xbold     { font-weight: 800; }
+.uppercase   { text-transform: uppercase; }
+.lowercase   { text-transform: lowercase; }
+.capitalize  { text-transform: capitalize; }
+.italic      { font-style: italic; }
+.underline   { text-decoration: underline; }
+
+// super / sub script
+.sub-script {
+  position: relative;
+  top: 4px;
+  font-size: 60%;
+}
+
+// shadows
+.text-shadow {
+  text-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
+}
+
+.text-shadow-alt {
+  text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.45);
+}

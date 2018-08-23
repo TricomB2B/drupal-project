@@ -1,0 +1,47 @@
+.one-sidebar,
+.two-sidebars {
+  #main-wrapper {
+    .content-wrapper {
+      @extend .group-flex;
+    }
+
+    #primary-content,
+    .sidebar {
+      flex-basis: 100%;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      @include media(">=small") {
+        flex-basis: 75%;
+      }
+    }
+  }
+}
+
+.one-sidebar {
+  #main-wrapper {
+    @include media(">=large") {
+      #primary-content {
+        flex-basis: 65%;
+        margin-right: 2%;
+      }
+
+      .sidebar {
+        flex-basis: 33%;
+      }
+    }
+  }  
+}
+
+.two-sidebars {
+  @include media(">=large") {
+    #primary-content {
+      @extend .col-all;
+    }
+
+    .sidebar {
+      @extend .col-25;
+    }
+  }
+}

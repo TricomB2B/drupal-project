@@ -1,0 +1,15 @@
+button, .button {
+  padding: 0.625em 4em;
+  border: none;
+  background-color: color("gray");
+  @extend .p;
+  @extend .w-bold;  
+  color: color("white");
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 300ms;
+
+  &:hover {
+    background-color: color("black");
+  }
+}

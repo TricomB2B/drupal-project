@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/// Mixin for centering vertically, horizontally, or both
+/// @argument {string} $properties
+///   Current possible values:
+///     - vertical
+///     - horizontal
+///
+/// @example scss
+///   .element {
+///     @include center(vertical);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     position: absolute;
+///     top: 50%;
+///     transform: translateY(-50%);
+///   }
+///
+/// @example scss
+///   .element {
+///     @include center(horizontal);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     position: absolute;
+///     left: 50%;
+///     transform: translateX(-50%);
+///   }
+///
+/// @example scss
+///   .element {
+///     @include center(both);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     position: absolute;
+///     top: 50%;
+///     left: 50%;
+///     transform: translate(-50%, 50%);
+///   }
+
+@mixin center($properties: "") {
+  $props: inspect($properties);
+
+  position: absolute;
+  
+  @if str-index($props, "vertical") {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @else if str-index($props, "horizontal") {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @else if str-index($props, "both") {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

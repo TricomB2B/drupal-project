@@ -1,0 +1,37 @@
+/**
+ * THEME COLORS
+**/
+$theme-admin-menu-primary-bg: #101010;
+$theme-admin-menu-secondary-bg: #45454A;
+$theme-admin-menu-font-color: #fafafa;
+
+/**
+ * COLOR MAP - just essentials to get you started
+**/
+$colors: (
+  "white": #fff,
+  "black": #000,
+  "gray": #919191,
+);
+
+/**
+ * FONT IMPORTS AND SETTINGS - admin font
+**/
+
+$admin-font: $font-stack-verdana;
+
+/**
+ * GLOBAL SETTINGS
+**/
+$breakpoints: (
+  mobile: 320px,
+  small: 450px,
+  medium: 768px,
+  large: 1024px
+);
+
+/**
+* SIZING
+**/
+$header-height: 8.75rem;
+$banner-height: 25rem;

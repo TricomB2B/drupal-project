@@ -1,0 +1,9 @@
+.background-wrapper {
+  @include background-container();
+  width: 100%;
+}
+
+.content-wrapper {
+	@include content-container();
+	width: 100%;
+}

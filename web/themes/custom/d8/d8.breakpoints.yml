@@ -1,0 +1,24 @@
+intel.mobile:
+  label: mobile
+  mediaQuery: 'all and (min-width: 320px) and (max-width: 449px)'
+  weight: 0
+  multipliers:
+    - 1x
+intel.small:
+  label: small
+  mediaQuery: 'all and (min-width: 450px) and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+intel.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 1023px)'
+  weight: 2
+  multipliers:
+    - 1x
+intel.large:
+  label: large
+  mediaQuery: 'all and (min-width: 1024px)'
+  weight: 3
+  mutlipliers:
+    - 1x

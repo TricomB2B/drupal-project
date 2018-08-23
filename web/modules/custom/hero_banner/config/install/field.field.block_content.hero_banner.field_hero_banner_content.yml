@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_banner
+    - field.storage.block_content.field_hero_banner_content
+  module:
+    - text
+id: block_content.hero_banner.field_hero_banner_content
+field_name: field_hero_banner_content
+entity_type: block_content
+bundle: hero_banner
+label: 'Banner Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

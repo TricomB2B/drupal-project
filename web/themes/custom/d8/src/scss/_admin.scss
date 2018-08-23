@@ -1,0 +1,41 @@
+.toolbar {
+  .menu-item {
+    font-family: inherit !important;
+    font-size: inherit !important;
+  }
+
+  .toolbar-icon {
+    &:before {
+      box-sizing: content-box;
+    }
+  }
+}
+
+
+/* logged in adjustments */
+.toolbar-horizontal, .toolbar-vertical {
+
+}
+
+#block-ddc-local-tasks {
+  ul {
+    @include flex(justify-start);
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li {
+    background-color: color("white");
+    margin-right: 0.25em;
+    padding: 0.5em;
+
+    &:hover {
+      color: color("white");
+      background-color: color("white");
+    }
+  }
+
+  .block-configure {
+    background-color: color("white");
+  }
+}
