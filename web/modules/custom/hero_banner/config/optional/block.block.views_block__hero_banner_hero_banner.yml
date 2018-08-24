@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_banner
+  module:
+    - views
+  theme:
+    - d8
+id: views_block__hero_banner_hero_banner
+theme: d8
+region: banner
+weight: -6
+provider: null
+plugin: 'views_block:hero_banner-hero_banner'
+settings:
+  id: 'views_block:hero_banner-hero_banner'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }
