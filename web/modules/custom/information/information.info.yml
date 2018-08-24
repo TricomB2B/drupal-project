@@ -1,0 +1,16 @@
+name: Information
+type: module
+description: 'Builds content type, views block, and places block for News. Template and styling found in D8 theme'
+dependencies: 
+  - block
+  - datetime
+  - datetime_range
+  - image
+  - link
+  - menu_ui
+  - node
+  - text
+  - scheduler
+  - views_infinite_scroll
+package: Custom
+core: '8.x'

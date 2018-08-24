@@ -6,8 +6,10 @@ dependencies:
     - field.storage.block_content.field_hero_banner_content
     - field.storage.block_content.field_hero_banner_image
     - field.storage.block_content.field_hero_banner_overlay
+    - field.storage.block_content.field_hero_banner_video
   module:
     - block_content
+    - file
     - image
     - options
     - text
@@ -59,23 +61,28 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: hero-banner
+          row_class: ''
           default_row_class: false
       row:
         type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
-        field_hero_banner_content:
-          id: field_hero_banner_content
-          table: block_content__field_hero_banner_content
-          field: field_hero_banner_content
+        field_hero_banner_overlay:
+          id: field_hero_banner_overlay
+          table: block_content__field_hero_banner_overlay
+          field: field_hero_banner_overlay
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'img-overlay-{{ field_hero_banner_overlay }}'
             make_link: false
             path: ''
             absolute: false
@@ -109,11 +116,11 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: value
-          type: text_default
+          type: list_key
           settings: {  }
           group_column: value
           group_columns: {  }
@@ -190,18 +197,18 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_hero_banner_overlay:
-          id: field_hero_banner_overlay
-          table: block_content__field_hero_banner_overlay
-          field: field_hero_banner_overlay
+        field_hero_banner_content:
+          id: field_hero_banner_content
+          table: block_content__field_hero_banner_content
+          field: field_hero_banner_content
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: true
           alter:
-            alter_text: true
-            text: 'img-overlay-{{ field_hero_banner_overlay }}'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -239,9 +246,71 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: list_key
+          type: text_default
           settings: {  }
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_hero_banner_video:
+          id: field_hero_banner_video
+          table: block_content__field_hero_banner_video
+          field: field_hero_banner_video
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: file_url_plain
+          settings: {  }
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -263,7 +332,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"{{ field_hero_banner_overlay }}\">\n<div class=\"hero-banner-image-wrapper\">{{ field_hero_banner_image }}</div>\n</div>\n<div class=\"hero-banner-content-wrapper\">\n  <div class=\"hero-banner-content-text\">{{ field_hero_banner_content }}</div>\n</div>"
+            text: "<div class=\"{{ field_hero_banner_overlay }}\"></div>\n<div class=\"hero-banner-image-wrapper\">{{ field_hero_banner_image }}</div>\n<div class=\"hero-banner-content-wrapper\">\n  <div class=\"hero-banner-content-text\">{{ field_hero_banner_content }}</div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -395,6 +464,7 @@ display:
         groups:
           1: AND
       css_class: hero_banner_view
+      show_admin_links: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -405,6 +475,7 @@ display:
         - 'config:field.storage.block_content.field_hero_banner_content'
         - 'config:field.storage.block_content.field_hero_banner_image'
         - 'config:field.storage.block_content.field_hero_banner_overlay'
+        - 'config:field.storage.block_content.field_hero_banner_video'
   hero_banner:
     display_plugin: block
     id: hero_banner
@@ -413,6 +484,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -423,3 +495,4 @@ display:
         - 'config:field.storage.block_content.field_hero_banner_content'
         - 'config:field.storage.block_content.field_hero_banner_image'
         - 'config:field.storage.block_content.field_hero_banner_overlay'
+        - 'config:field.storage.block_content.field_hero_banner_video'

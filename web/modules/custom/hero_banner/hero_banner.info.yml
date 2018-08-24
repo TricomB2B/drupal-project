@@ -3,9 +3,10 @@ type: module
 description: 'Builds custom block content type and view display for hero banners'
 dependencies: 
   - block
-  - options
+  - file
   - image
-  - text
   - node
+  - options
+  - text
 package: Custom
 core: '8.x'

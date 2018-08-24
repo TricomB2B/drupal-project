@@ -17,6 +17,7 @@
   &-bw {
     .hero-banner-image-wrapper img,
     img {
+      @include position(absolute, 0);
       filter: grayscale(100%);      
       filter: gray;
       filter: url(filters.svg#grayscale);

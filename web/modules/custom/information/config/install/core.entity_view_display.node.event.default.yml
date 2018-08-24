@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_booth_number
+    - field.field.node.event.field_date_range
+    - field.field.node.event.field_event_floor
+    - field.field.node.event.field_image
+    - field.field.node.event.field_link
+    - field.field.node.event.field_location
+    - node.type.event
+  module:
+    - datetime_range
+    - image
+    - link
+    - text
+    - user
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  field_booth_number:
+    type: text_default
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_date_range:
+    type: daterange_custom
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F d, Y'
+      separator: '-'
+    third_party_settings: {  }
+  field_event_floor:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_link:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_location:
+    type: text_default
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
