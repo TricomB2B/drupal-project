@@ -6,12 +6,16 @@ dependencies:
     - field.field.block_content.hero_banner.field_hero_banner_content
     - field.field.block_content.hero_banner.field_hero_banner_image
     - field.field.block_content.hero_banner.field_hero_banner_overlay
+    - field.field.block_content.hero_banner.field_hero_banner_video
     - field.field.block_content.hero_banner.field_hero_display_page
     - field.field.block_content.hero_banner.field_hero_published
     - image.style.thumbnail
   module:
+    - file
     - image
     - text
+_core:
+  default_config_hash: JsPnpY1VCx7tIsYfvQiI2_EBgqZYQ7pV-3hFnzTGphk
 id: block_content.hero_banner.default
 targetEntityType: block_content
 bundle: hero_banner
@@ -19,7 +23,7 @@ mode: default
 content:
   field_hero_banner_content:
     type: text_textarea
-    weight: 3
+    weight: 4
     region: content
     settings:
       rows: 5
@@ -39,14 +43,28 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_hero_banner_video:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
   field_hero_display_page:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_hero_published:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   info:
     type: string_textfield
@@ -55,12 +73,5 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_hero_published:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
 hidden: {  }

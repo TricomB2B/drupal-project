@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_banner
+    - field.storage.block_content.field_hero_banner_video
+  module:
+    - file
+id: block_content.hero_banner.field_hero_banner_video
+field_name: field_hero_banner_video
+entity_type: block_content
+bundle: hero_banner
+label: 'Banner Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: hero-banner
+  file_extensions: 'mp4 webm mov ogv jpg png gif tiff'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
+

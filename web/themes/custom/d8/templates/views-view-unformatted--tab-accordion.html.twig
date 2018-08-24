@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Tabs to accordions
+ * Shows the view for all the custom Accordion blocks. Builds an accordion, with each block containing the title and content for a single tab/accordion (mobile sizes)
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @author Devon Taylor <https://github.com/Taylord93>, 
+ *  revised Abigail Kesler <https://github.com/abbingail>
+ *
+ */
+#}
+
+<div class="custom-tabs" data-custom-tabs>
+  <div class="custom-tabs-container">
+    <div class="custom-tabs-wrapper">
+
+      {% for row in rows -%}
+
+          <div class="tab" data-tab data-index="{{ loop.index }}">
+            <div class="tab-label">
+              {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_tab_accordion_title }}'] }}
+            </div>
+            <div class="tab-mobile-content">
+              <div class="content-group">
+                <div class="content-container">
+                  {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_tab_accordion_content }}'] }}
+                </div>
+                <div class="image-container">
+                  {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_tab_accordion_image }}'] }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {%- endfor %}
+
+        </div>
+        <div class="custom-tabs-content">
+          {% for row in rows -%}
+            <div class="content-group" data-tab-content="{{ loop.index }}">
+              <div class="content-container">
+                {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_tab_accordion_content }}'] }}
+              </div>
+              <div class="image-container">
+                {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_tab_accordion_image }}'] }}
+              </div>
+            </div>
+          {%- endfor %}
+        </div>
+    </div>
+</div>

@@ -1,15 +1,28 @@
 #block-views-block-hero-banner-hero-banner {
   position: relative;
-  min-height: $header-height;
+  height: $banner-height;
   overflow: hidden;
   z-index: 10;
+
+  > div {
+    @include position(absolute, 0);
+  }
+
+  video {
+    display: none;
+    @include position(absolute, 0);
+    z-index: -1;
+    object-fit: cover;
+    // IE11/Edge polyfill
+    font-family: "object-fit: cover;";
+
+    @include media(">=medium") {
+      display: block;
+    }
+  }
 }
 
 .hero-banner {
-  &-view {
-    height: $banner-height;
-  }
-
   &-image-wrapper {
   @include position(absolute, 0);
   z-index: -1;
@@ -26,11 +39,12 @@
     &-wrapper {
       @include flex(justify-center align-center);
       @include position(absolute, 0);
-      color: color("white");
+      height: $banner-height;
     }
 
     &-text {
       padding: 0;
+      color: color("white");
 
       @include media(">=large") {
         padding: 0 2em;
