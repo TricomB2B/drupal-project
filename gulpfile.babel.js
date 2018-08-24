@@ -107,9 +107,7 @@ gulp.task('proxy', gulp.series(
 gulp.task('build', gulp.parallel(
   'styles',
   'js-lint',
-  'scripts',
-  'css-vendors',
-  'js-vendors'
+  'scripts'
 ));
 
 // builds the vendor files
@@ -128,16 +126,16 @@ gulp.task('images', gulp.parallel(
   Task Logic
 *****************************************/
 
-function browserSyncLocal () {
-  return () => {
+function browserSyncLocal (done) {
+  return (done) => {
     browserSync.init({
       server: './web'
-    });
+    }, done);
   };
 }
 
-function browserSyncProxy () {
-  return () => {
+function browserSyncProxy (done) {
+  return (done) => {
     if (!process.env.BROWSER_SYNC_PROXY) {
       console.error('ERROR: could not locate a `.env` file or it does not have a `BROWSER_SYNC_PROXY` variable.');
       process.exit(1);
@@ -145,7 +143,7 @@ function browserSyncProxy () {
 
     browserSync.init({
       proxy: process.env.BROWSER_SYNC_PROXY
-    });
+    }, done);
   };
 }
 
@@ -263,9 +261,9 @@ function tinypng () {
 
 function watch () {
   return () => {
-    gulp.watch(sources.js, ['scripts']);
-    gulp.watch(sources.scss, ['styles']);
-    gulp.watch('**/*.php', browserSync.reload);
-    gulp.watch('**/*.twig', browserSync.reload);
+    gulp.watch(sources.js, gulp.parallel('scripts'));
+    gulp.watch(sources.scss, gulp.parallel('styles'));
+    // gulp.watch('**/*.php', browserSync.reload);
+    // gulp.watch('**/*.twig', browserSync.reload);
   };
 }
