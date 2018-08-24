@@ -20,7 +20,7 @@ Tab Accordion creates:
    * Display page - an ER for whatever content type(s) you want this accordion to display 
    		on. Placement is by default set to unlimited
    * Accordion sort - by default accordions sort based on title. If certain items need to take priority, use this field
- * Custom view block called "Hero Banner", which controls layout and adds classes for styling
+ * Custom view block called "Hero Banner", which controls layout and adds classes for styling. View block is automatically placed in the "Bottom No Wrap" region of the D8 theme
 
 
 REQUIREMENTS
@@ -38,10 +38,6 @@ No special requirements.
 CONFIGURATION
 -------------
 
-View block will need placed once. Title of block is "Tabs to Accorion: Tab Accordion Vews Block"
- * Configuration:
-   * Turn off "Display Title"
-   * That's it
 Create accordion blocks to your heart's content. If/When the "configure block" pops up for the specific block you are creating, you can ignore. Placing directly with the block will bypass the associated views layout/markup and template... and it won't be pretty.
 
 
