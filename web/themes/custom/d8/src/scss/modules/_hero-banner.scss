@@ -24,16 +24,16 @@
 
 .hero-banner {
   &-image-wrapper {
-  @include position(absolute, 0);
-  z-index: -1;
-  }
+    @include position(absolute, 0);
+    z-index: -1;
 
-  img {
-    @include size(100%);
-    object-fit: cover;
-    // for ie11 object-fit polyfill
-    font-family: "object-fit: cover;";
-  }
+    img {
+      @include size(100%);
+      object-fit: cover;
+      // for ie11 object-fit polyfill
+      font-family: "object-fit: cover;";
+    }
+  }  
 
   &-content {
     &-wrapper {
