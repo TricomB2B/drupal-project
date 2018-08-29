@@ -3,11 +3,14 @@
 /// Provides a single source of truth for styling container elements,
 /// as well as providing standard defaults.
 ///
-/// @argument {number (with unit)} $max-container-width [1440px]
+/// @argument {number (with unit)} $max-container-width [1472px]
 ///   Max-width to set on the element
 ///
 /// @argument {list} $margin [0 auto]
 ///   List of margin values, accepts CSS shorthand
+///
+/// @argument {number (with unit)} $padding [0 1em]
+///   Padding to set on the element
 ///
 /// @example scss
 ///   .background-container {
@@ -16,8 +19,9 @@
 ///
 ///   // CSS Output
 ///   .background-container {
-///     max-width: 1440px;
+///     max-width: 1472px;
 ///     margin: 0 auto;
+///			padding: 0 1em;
 ///   }
 ///
 /// @example scss
@@ -27,11 +31,13 @@
 ///
 ///   // CSS Output
 ///   .background-container {
-///     max-width: 1440px;
+///     max-width: 1472px;
 ///     margin: 0 50px 2em;
+///			padding: 0 1em;
 ///   }
 
-@mixin background-container($max-container-width: 1440px, $margin: 0 auto) {
+@mixin background-container($max-container-width: 1472px, $margin: 0 auto, $padding: 0 1em) {
   max-width: $max-container-width;
   margin: $margin;
+  padding: $padding;
 }

@@ -9,8 +9,8 @@
 /// @argument {list} $margin [0 auto]
 ///   List of margin values, accepts CSS shorthand
 ///
-/// @argument {list} $padding [0 15px]
-///   List of padding values, accepts CSS shorthand
+/// @argument {number (with unit)} $padding [0 1em]
+///   Padding to set on the element
 ///
 ///
 /// @example scss
