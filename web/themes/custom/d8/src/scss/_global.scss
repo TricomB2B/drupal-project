@@ -3,6 +3,12 @@ html, body {
   overflow-x: hidden;
 }
 
+// img default behavior
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 // for sticky footer
 .page-wrapper {
   display: flex;

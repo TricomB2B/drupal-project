@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/// Provides a single source of truth for styling svg icons,
+/// as well as providing standard defaults.
+///
+///
+/// @argument {number (with unit)} $width [1em]
+///   Width to set on the element
+///
+/// @argument {number (with unit)} $height [1em]
+///   Height to set on the element
+///
+/// @argument {list} $position [absolute]
+///   Position to set on the element
+///
+/// @argument {string} $background-repeat [no-repeat]
+///   Value for background-repeat on the element
+///
+/// @argument {string} $content [""]
+///   Content to set on the element
+///
+/// @example scss
+///   .svg-icon {
+///     @include icon();
+///   }
+///
+///   // CSS Output
+///   .svg-icon {		  
+///			width: 1em;
+///			height: 1em;
+///			position: absolute;
+///			background-repeat: no-repeat;
+///			content: "";
+///   }
+///
+/// @example scss
+///   .svg-icon {
+///     @include icon($width: 2em, $height: 1.5em);
+///   }
+///
+///   // CSS Output
+///   .svg-icon {
+///     width: 2em;
+///			height: 1.5em;
+///		  position: absolute;
+///			background-repeat: no-repeat;
+///			content: "";
+///   }
+
+@mixin icon($width: 1em, $height: 1em, $position: absolute, $background-repeat: no-repeat, $content: "")  {
+	width: $width;
+	height: $height;
+	position: $position;
+	background-repeat: $background-repeat;
+	content: $content;
+}
