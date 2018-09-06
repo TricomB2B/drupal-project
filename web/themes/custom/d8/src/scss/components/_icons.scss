@@ -1,0 +1,38 @@
+.svg-icon {
+  position: relative;
+
+  .twitter {
+    &::before {
+      @include icon();
+      background-image: url("/themes/custom/d8/images/icons/twitter.svg");
+    }
+  }
+
+  .facebook {
+    &::before {
+      @include icon($width: 0.5em);
+      background-image: url("/themes/custom/d8/images/icons/facebook.svg");
+    }
+  }
+
+  .linkedin {
+    &::before {
+      @include icon();
+      background-image: url("/themes/custom/d8/images/icons/linkedin.svg");
+    }
+  }
+
+  .youtube {
+    &::before {
+      @include icon();
+      background-image: url("/themes/custom/d8/images/icons/youtube.svg");
+    }
+  }
+
+  .search {
+    &::before {
+      @include icon($width: 1.5em, $height: 1.5em);
+      background-image: url("/themes/custom/d8/images/icons/search.svg");
+    }
+  }
+}
